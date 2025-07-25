@@ -1,0 +1,97 @@
+{
+  "info": {
+    "_postman_id": "c9b93bd6-e22e-4c19-b4ed-123456789abc",
+    "name": "Menu API CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Menu Items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/menu",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "menu"]
+        }
+      }
+    },
+    {
+      "name": "Get Menu Item By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/menu/{{menuId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "menu", "{{menuId}}"]
+        }
+      }
+    },
+    {
+      "name": "Create Menu Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Veg Biryani\",\n  \"category\": \"Main Course\",\n  \"price\": 180,\n  \"description\": \"Aromatic basmati rice with vegetables\",\n  \"isAvailable\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/menu",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "menu"]
+        }
+      }
+    },
+    {
+      "name": "Update Menu Item",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Biryani\",\n  \"price\": 200,\n  \"description\": \"Updated description for the biryani\",\n  \"isAvailable\": false\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/menu/{{menuId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "menu", "{{menuId}}"]
+        }
+      }
+    },
+    {
+      "name": "Delete Menu Item",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/menu/{{menuId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "menu", "{{menuId}}"]
+        }
+      }
+    }
+  ]
+}
